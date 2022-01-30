@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Navb from './Component/Navb';
+import {BrowserRouter as Router,Route,Switch,Link } from "react-router-dom";
+import NavbarZ from './NavbarZ';
+import About from './LinkedForm/About';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Registration from './LinkedForm/Registration';
+import Thappa from './LinkedForm/Thappa';
+
+class App extends Component {
+  render() {
+    
+    return (
+      <>
+    <React.Fragment>
+       <Router>
+      <Navb/>
+      <Switch>
+      <Route path="/About" component={About}/>
+      <Route path="/Navbar" component={NavbarZ}/>
+      <Route path="/Registration" component={Registration}/>
+      <Route path="/Thappa" component={Thappa}/>
+      
+      
+      </Switch>
+      </Router>
+      
+    
+    </React.Fragment>
+    </>
+    );
+  }
 }
 
 export default App;
